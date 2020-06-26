@@ -81,6 +81,7 @@ form button:hover {
   border-radius: 0;
   cursor: pointer;
   font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .complete-btn {
@@ -89,4 +90,22 @@ form button:hover {
 
 .todo-item {
   padding: 0 0.5rem;
+}
+
+.delete-btn:hover {
+  background: white;
+  color: #d35400;
+}
+
+.complete-btn:hover {
+  color: rgb(73, 204, 73);
+  background: white;
+}
+
+i {
+  pointer-events: none;
+}
+
+.checked {
+  text-decoration: line-through;
 }

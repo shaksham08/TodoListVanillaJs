@@ -23,18 +23,34 @@ function addTodo(e) {
   li.innerHTML = todo;
   div.appendChild(li);
 
-  //?Creating a delete button
-  const deleteButton = document.createElement("button");
-  deleteButton.innerHTML = `<i class="fas fa-trash-alt"></i>`;
-  deleteButton.classList.add("delete-btn");
-  div.appendChild(deleteButton);
-
   //?Creating a checked button
   const checkedButton = document.createElement("button");
   checkedButton.innerHTML = `<i class="fas fa-check"></i>`;
   checkedButton.classList.add("complete-btn");
   div.appendChild(checkedButton);
 
+  //?Creating a delete button
+  const deleteButton = document.createElement("button");
+  deleteButton.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+  deleteButton.classList.add("delete-btn");
+  div.appendChild(deleteButton);
+
   //?Finally adding div to todolist
   todoList.appendChild(div);
+
+  //adding addeventListener to deleteButton
+  deleteButton.addEventListener("click", deleteTodo);
+  //adding addvenetListener to checkedButton
+  checkedButton.addEventListener("click", checkTodo);
+}
+
+//DeleteTodo Function
+function deleteTodo(e) {
+  e.target.parentElement.remove();
+}
+
+//checkTodo Function
+function checkTodo(e) {
+  const todo = e.target.parentElement;
+  todo.querySelector(".todo-item").classList.add("checked");
 }
