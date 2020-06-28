@@ -46,11 +46,16 @@ function addTodo(e) {
 
 //DeleteTodo Function
 function deleteTodo(e) {
-  e.target.parentElement.remove();
+  const todo = e.target.parentElement;
+  //adding animation
+  todo.classList.add("fall");
+  todo.addEventListener("transitionend", function () {
+    todo.remove();
+  });
 }
 
 //checkTodo Function
 function checkTodo(e) {
   const todo = e.target.parentElement;
-  todo.querySelector(".todo-item").classList.add("checked");
+  todo.classList.toggle("checked");
 }
