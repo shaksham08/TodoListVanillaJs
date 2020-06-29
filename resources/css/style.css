@@ -128,4 +128,30 @@ select {
 
 .select {
   margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: rgba(218, 161, 53, 1);
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: white;
+  color: #d35400;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  color: white;
+  background: #d35400;
+  transition: all 0.3s ease;
 }
